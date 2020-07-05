@@ -8,6 +8,5 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-twitter`
   ]
 }
