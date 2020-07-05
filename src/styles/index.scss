@@ -1,3 +1,6 @@
+$break-large: 2400px;
+$break-small: 420px;
+
 body {
     margin: 0;
     background-image: url('../../static/background.jpg');
@@ -7,17 +10,41 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     .aboutUs{
         margin: 0 0 55px 35px;
+        @media screen and (max-width: $break-small) {
+        margin: 0 15px;
+        }
         .mainText{
             color: white;
             h1{
                 width: 50%;
-                font-size: 40px;}
+                font-size: 40px;
+                @media screen and (max-width: $break-small) {
+                    font-size: 25px;
+                    width: 100%;
+                  }
+                @media screen and (min-width: $break-large) {
+                    font-size: 80px;
+                    width: 60%;
+                }
+                  }
             p{
                 width: 45%;
-                font-size: 25px;}
-        }
+                font-size: 25px;
+                @media screen and (max-width: $break-small) {
+                    font-size: 20px;
+                    width: 100%;
+                }
+                @media screen and (min-width: $break-large) {
+                    font-size: 50px;
+                }
+            }
+            }
+
         .logo{
         width: 200px;
+        @media screen and (min-width: $break-large) {
+            width: 400px;
+        }
         }
         .contactUs{
             margin-top: 35px;
@@ -38,19 +65,39 @@ body {
                     border: #f6e586 3px solid;
                     transition: all 0.4s ease 0s;
                 }
+                @media screen and (max-width: $break-small) {
+                    padding: 5px;
+                }
+                @media screen and (min-width: $break-large) {
+                    padding: 20px 40px;
+                    font-size: 30px;
+                }
+                }
             }
         }
-        }
-    }
+
     .hosts{
         display: flex;
         justify-content: flex-start;
         padding: 0;
         margin: 0 0 55px 35px;
+        @media screen and (max-width: $break-small) {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        }
         h4{
             color: #f6e586;
             font-size: 50px;
-        }
+            @media screen and (max-width: $break-small) {
+                font-size: 25px;
+                text-align: center;
+            }
+            @media screen and (min-width: $break-large) {
+                font-size: 70px;
+            }
+            }
+
         div{
             background-color: #1f2120;
             border-radius: 20px;
@@ -58,14 +105,24 @@ body {
             margin: 20px;
             width: 50%;
             box-shadow: 2px 3px #f6e586;
+            @media screen and (max-width: $break-small) {
+                width: 75%;
+            }
+            }
             table{
                 border-spacing: 0px;
                 tbody{
+                    tr:nth-child(even){
+                        background-color: #393936;
+                    }
                     tr{
                         td{
                         width: 40%;
                         padding: 8px;
                         color: white;
+                        @media screen and (min-width: $break-large) {
+                            font-size: 35px;
+                        }
                     }
                         th{
                         padding: 10px;
@@ -73,28 +130,55 @@ body {
                         width: 60%;
                         color: white;
                         text-align: start;
+                        @media screen and (min-width: $break-large) {
+                            font-size: 35px;
+                        }
                     }
                 }
             }
         }
         }
-    }
+
     .team{
         display: flex;
         justify-content: flex-end;
         padding: 0;
         margin: 0 50px 35px 0;
+        @media screen and (max-width: $break-small) {
+        align-items: center;
+        margin: 0;
+        flex-direction: column;
+        }
+
         h4{
             color: #f6e586;
             font-size: 50px;
-        }
-        .teamMember{
-            margin: 0 55px;            
-            img{
-                filter: grayscale(100%);
-                width: 200px;
-                border-radius: 400px;
+            @media screen and (max-width: $break-small) {
+                font-size: 25px;
             }
+            @media screen and (min-width: $break-large) {
+                font-size: 70px;;
+            }
+            }
+            
+        .teamMember{
+            margin: 0 5%;   
+            a{
+                img{
+                    filter: grayscale(100%);
+                    width: 200px;
+                    border-radius: 400px;
+                    &:hover{
+                    filter: initial;
+                    transition: all 0.4s ease 0s;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        width: 150px;}
+                    @media screen and (min-width: $break-large) {
+                        width: 350px;}
+                    }
+                }
+            }         
             p{
                 background-color:#393936;
                 border-radius: 10px;
@@ -102,6 +186,8 @@ body {
                 text-align: center;
                 padding: 5px;
                 box-shadow: 2px 3px #f6e586;
+                @media screen and (min-width: $break-large) {
+                    font-size: 35px;}
             }
         }
     }
@@ -115,11 +201,10 @@ body {
             .socialButton{
             width: 40px;
             margin: 10px;
+            @media screen and (min-width: $break-large) {
+                width: 70px;
+            }
             }
         }
     }
-  }
-
-  .grayfield{
-      background-color: #393936;
   }

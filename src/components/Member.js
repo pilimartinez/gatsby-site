@@ -1,11 +1,13 @@
 import React from 'react';
-import SocialButton from './SocialButton'
 
-function Member(props) {
-  return <div className="teamMember">
-      <img src={props.profile} alt="teamMember"></img>
+const Member = (props) => {
+  return (
+  <div className="teamMember">
+      <a href={props.twitter} target="_blank">
+        <img src={props.profile} alt="teamMember"></img>
+      </a>
       <p>{props.name}</p>
   </div>
-}
+  )}
 
 export default Member;

@@ -1,7 +1,11 @@
 import React from 'react';
 
-function SocialButton(props) {
-  return <a href={props.href}> <img className="socialButton" src={props.socialLogo} alt={props.alt}></img> </a>  
-}
+const SocialButton = (props) => {
+  return (
+  <a href={props.href}  target="_blank"> 
+    <img className="socialButton" src={props.socialLogo} alt={props.alt}>
+    </img> 
+  </a>  
+  )}
 
 export default SocialButton;
